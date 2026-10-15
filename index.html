@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anime Tactics - Battle Prototype</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>⚔️ Anime Tactics</h1>
+  <div id="top">
+    <span id="turnLabel">Your Turn</span>
+    <button id="waitBtn" disabled>Wait</button>
+    <button id="endTurnBtn">End Turn</button>
+  </div>
+  <div id="main">
+    <div id="board"></div>
+    <div id="side">
+      <div id="info">Click one of your heroes (blue) to start.</div>
+      <div id="log"></div>
+    </div>
+  </div>
+  <div id="overlay" class="hidden">
+    <div id="overlayBox">
+      <h2 id="overlayText"></h2>
+      <button id="restartBtn">Play Again</button>
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>

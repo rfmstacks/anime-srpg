@@ -1,0 +1,34 @@
+/* Overall page look */
+body { background: linear-gradient(#1b1035, #3a1d5c); color: #fff; font-family: sans-serif; text-align: center; margin: 0; padding: 10px; }
+h1 { margin: 6px; text-shadow: 0 0 10px #ff6ad5; }
+#top { margin-bottom: 8px; }
+#turnLabel { font-weight: bold; margin-right: 12px; font-size: 18px; }
+button { background: #ff6ad5; border: none; color: #fff; padding: 8px 16px; border-radius: 8px; font-size: 16px; cursor: pointer; margin: 0 4px; }
+button:disabled { background: #666; cursor: default; }
+#main { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+/* The 8x8 board is a CSS grid of tiles */
+#board { display: grid; grid-template-columns: repeat(8, 64px); grid-template-rows: repeat(8, 64px); gap: 2px; background: #222; padding: 4px; border-radius: 8px; }
+.tile { background: #4e8f4a; border-radius: 4px; position: relative; cursor: pointer; }
+.tile:nth-child(odd) { background: #5aa055; }
+.tile.move { background: #4fa3ff !important; }   /* where you can walk */
+.tile.attack { background: #ff5a5a !important; } /* who you can hit */
+
+/* A unit sitting on a tile */
+.unit { position: absolute; inset: 4px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 26px; border: 3px solid; }
+.unit.hero { background: #bfe0ff; border-color: #2a6fdb; }
+.unit.enemy { background: #ffc9c9; border-color: #c62828; }
+.unit.done { filter: grayscale(0.9); opacity: 0.7; }
+.unit.selected { box-shadow: 0 0 12px 4px #ffeb3b; }
+.hpbar { position: absolute; bottom: -2px; left: 6px; right: 6px; height: 5px; background: #400; border-radius: 3px; }
+.hpbar div { height: 100%; background: #3f3; border-radius: 3px; }
+
+/* Side panel */
+#side { width: 260px; text-align: left; }
+#info { background: rgba(0,0,0,.35); padding: 10px; border-radius: 8px; min-height: 110px; }
+#log { background: rgba(0,0,0,.35); padding: 10px; border-radius: 8px; margin-top: 8px; height: 280px; overflow-y: auto; font-size: 13px; }
+
+/* Win / lose screen */
+#overlay { position: fixed; inset: 0; background: rgba(0,0,0,.7); display: flex; align-items: center; justify-content: center; }
+#overlay.hidden { display: none; }
+#overlayBox { background: #3a1d5c; padding: 30px 50px; border-radius: 16px; border: 3px solid #ff6ad5; }
